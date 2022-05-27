@@ -3,7 +3,7 @@
 # create main concept 
 
 import pygame
-from gdc.state1.Ui import Ui
+from .Ui.Ui import Ui
 
 class Game():
     def __init__(self):
