@@ -1,2 +1,2 @@
-from Game import *
-from Ui import *
+from .Game import Game
+from .Ui import Ui

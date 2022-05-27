@@ -3,19 +3,17 @@
 # create main concept 
 
 import pygame
-from Ui import *
+from gdc.state1.Ui import Ui
 
 class Game():
     def __init__(self):
-        self.userInterface = UserInterface()        
+        self.ui = Ui()        
 
     def run(self):        
-        while self.userInterface.running:
-            self.userInterface.processInput()            
-            self.userInterface.update()
-            self.userInterface.render()
+        while self.ui.running:
+            self.ui.runUILoop()
             #Each game step (input, update, and render) is run 60 times per second
-            self.userInterface.clock.tick(60)
+            self.ui.clock.tick(60)   
     
     def quit(self):
         pygame.quit()

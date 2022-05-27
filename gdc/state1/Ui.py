@@ -3,33 +3,43 @@
 
 # lets merge a tank game with pacmac idea
 
-
-
 import pygame
 import os
 
-class UserInterface():
+class Ui():
     def __init__(self) -> None:
-        pygame.init()
-        os.environ['SDL_VIDEO_CENTERED'] = '1'
+        pygame.init()               
+        pygame.display.set_caption("SuperTank")
+        #pygame.display.set_icon(pygame.image.load("assets/ui/icon.png"))        
         
-        self.running = False
-        self.window = pygame.display.set_modeset_mode((int(500),int(500)))
+        
+        self.window = pygame.display.set_mode((int(500),int(500)))
+        self.clock = pygame.time.Clock()       
+        self.running = True
     
     def updateGameState(self):
         pass
-    
-    def runLoop(self):
-        self.running = True
-        while self.running:
-            self.inputKeyboardMouse()
-            self.updateGameState()
-            self.renderUI()
-            return
-                
+        
     def renderUI(self):
         self.window.fill((255,255,255))
-        pass
+        pygame.display.update()
     
-    def inputKeyboardMouse(self):
-        pass
+    def inputKeyboardMouse(self):        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.running = False
+                break
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    self.running = False
+                    break                
+    
+    def quit(self):
+        pygame.quit()
+        
+    def runUILoop(self):                
+        self.inputKeyboardMouse()
+        # self.updateGameState()
+        self.renderUI()
+        
+           
