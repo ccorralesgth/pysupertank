@@ -1,4 +1,4 @@
-from gdc.state1.Game import Game
+from gdc.v1.Game import Game
 import os
 
 os.environ['SDL_VIDEO_CENTERED'] = '1'
