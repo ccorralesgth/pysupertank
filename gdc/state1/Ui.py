@@ -10,8 +10,7 @@ class Ui():
     def __init__(self) -> None:
         pygame.init()               
         pygame.display.set_caption("SuperTank")
-        #pygame.display.set_icon(pygame.image.load("assets/ui/icon.png"))        
-        
+        #pygame.display.set_icon(pygame.image.load("assets/ui/icon.png"))  
         
         self.window = pygame.display.set_mode((int(500),int(500)))
         self.clock = pygame.time.Clock()       
@@ -21,7 +20,11 @@ class Ui():
         pass
         
     def renderUI(self):
+        #white background
         self.window.fill((255,255,255))
+        
+        pygame.draw.rect(self.window,(0,0,0),(50,50,50,50))
+          
         pygame.display.update()
     
     def inputKeyboardMouse(self):        
