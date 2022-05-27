@@ -48,5 +48,7 @@ class Ui():
         self.inputKeyboardMouse()
         # self.updateGameState()
         self.renderUI()
+        #Each game step (input, update, and render) is run 60 times per second
+        self.ui.clock.tick(60)   
         
            

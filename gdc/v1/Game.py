@@ -12,8 +12,7 @@ class Game():
     def run(self):        
         while self.ui.running:
             self.ui.runUILoop()
-            #Each game step (input, update, and render) is run 60 times per second
-            self.ui.clock.tick(60)   
+            
     
     def quit(self):
         pygame.quit()
